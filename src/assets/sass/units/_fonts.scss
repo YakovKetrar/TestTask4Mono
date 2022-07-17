@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Golos';
+    src: local('Golos Regular'), local('GolosText-Regular'), url('./assets/fonts/golos/Golostextregular.woff2') format('woff2'), url('./assets/fonts/golos/Golostextregular.woff') format('woff'), url('./assets/fonts/golos/Golostextregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos';
+    src: local('Golos Medium'), local('GolosText-Medium'), url('./assets/fonts/golos/Golostextmedium.woff2') format('woff2'), url('./assets/fonts/golos/Golostextmedium.woff') format('woff'), url('./assets/fonts/golos/Golostextmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RoadRadio';
+    src: 
+    url('./assets/fonts/RoadRadio/RoadRadio.woff') format('woff'),
+    url('./assets/fonts/RoadRadio/RoadRadio.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LC Web';
+    src: 
+    url('./assets/fonts/Graphik/Graphik.woff') format('woff'),
+    url('./assets/fonts/Graphik/Graphik.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    }

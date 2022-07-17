@@ -1,0 +1,74 @@
+.addresses{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 67px;
+    @media (min-width: $tablet){
+        margin-bottom: 80px;
+    }
+    @media (min-width: $desktop){
+        margin-bottom: 100px;
+    }
+}
+.addresses__list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 300px 300px 300px 300px;
+    @media (max-width: $desktop){
+        grid-template-columns: 350px 350px;
+        gap: 10px;
+    }
+    @media (max-width: $tablet){
+        grid-template-columns: 288px;
+    }
+
+
+    color: $text-black;
+    font-family: 'Golos', sans-serif;
+    font-size: 14px;
+    line-height: 19.6px;
+}
+.addresses__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 33px 22px 40px 22px;
+    max-width: 350px;
+    height: 310px;
+    border-radius: 20px;
+
+
+    background-color: $bg-gray;
+    list-style-type: none;
+    @media (max-width: $tablet){
+        padding: 33px 12px 40px 12px;
+        }
+}
+.doubleBox {
+    max-width: none;
+    @media (min-width: $tablet){
+    grid-area: auto / auto / auto / span 2;
+    }
+}
+.addresses__city {
+    margin-bottom: 15px;
+    font-family: 'RoadRadio', sans-serif;
+    font-size: 26px;
+    line-height: 110%;
+    font-weight: normal;
+}
+.addresses__contacts {
+    margin-bottom: 10px;
+    line-height: 150%;
+}
+.addresses__address {
+    margin-bottom: 10px;
+    color: $text-gray;
+}
+.addresses__openMap {
+    cursor: pointer;
+    color: $main-red;
+}
+.addresses__workTime {
+    color: $text-black;
+}

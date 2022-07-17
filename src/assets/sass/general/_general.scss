@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+.container {
+    margin: 0px auto;
+    @media (min-width: $mobile) {
+            width: $mobile;
+    }
+    @media (min-width: $tablet) {
+            width: $tablet;
+    }
+    @media (min-width:$desktop) {
+            width: $desktop;
+    }
+}
+

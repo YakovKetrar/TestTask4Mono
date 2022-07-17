@@ -1,0 +1,220 @@
+.header { 
+    margin-bottom: 30px;
+    @media (min-width: $tablet) {
+        margin-bottom: 40px;
+    }
+    @media (min-width: $desktop) {
+        margin-bottom: 62px;
+    }
+}
+.navigation {
+    width: 100%;
+    height: 65px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: $tablet) {
+        padding: 0 29px;
+    }
+    @media (min-width: $desktop) {
+        height: 92px;
+    }
+    &__logo {
+        & svg, & img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        & svg {
+            width: 70px;
+            height: 40px; 
+            @media (min-width: $tablet) {
+                display: none;
+            }
+            @media (min-width: $desktop) {
+                display: block;
+                width: 100px;
+                height: 64px; 
+            }
+        }
+        & img {
+            display: none;
+            @media (min-width: $tablet) {
+                display: block;
+            }
+            @media (min-width: $desktop) {
+                display: none;
+            }
+        }
+    }
+}
+.left__wrapper {
+    display: flex;
+    align-items: center;
+    & ul {
+        list-style-type: none;
+        display: flex;
+        & li {
+            margin-right: 30px;
+            display: none;
+
+            font-family: 'Golos', sans-serif;
+            font-size: 14px;
+            line-height: 140%;
+            color: $text-black;
+
+
+            @media (min-width: $tablet) {
+                display: inline-block;
+                margin-right: 30px;
+            }
+            @media (min-width: $desktop) {
+                margin-right: 46px;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+        & li:last-child {   
+            display: none;
+            @media (min-width: $desktop) {
+                display: inline-block;
+            }
+        }
+    }
+    &__svg__menu {
+        margin-right: 48px;
+        width: 23px;
+        height: 8px;
+        @media (min-width: $desktop) {
+            width: 32px;
+            height: 12px;
+        }
+    } 
+}
+.rigth__wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: $tablet) {
+        padding: 0 29px;
+    }
+& > div:first-child {
+    display: flex;
+    align-items: center;
+}
+&__svg__comparison {
+    margin-right: 26px;
+    width: 16px;
+    height: 24px;
+}
+&__svg__search {
+    width: 16px;
+    height: 18px;
+    @media (min-width: $tablet) {
+        margin-right: 48px;
+    }
+}
+&__contacts {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: $tablet) {
+        display: flex;
+    }
+    @media (min-width: $desktop) {
+        margin-right: 59px;
+    }
+    & span {
+        margin-bottom: 3px;
+        font-family: 'Golos', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: $text-black;
+    }
+    & a {
+        text-decoration: none;
+        font-family: 'Graphik LC Web', sans-serif;
+        font-size: 13px;
+        line-height: 120%;
+        color: $text-gray;
+    }
+}
+&__orderButton {
+    padding: 19px 28px;
+    border: none;
+    border-radius: 14px;
+    background-color: $main-red;
+    cursor: pointer;
+
+    font-family: 'RoadRadio', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    @media (max-width: $desktop) {
+        display: none;
+    }
+}
+}
+
+
+
+
+
+.pageInfo {
+
+    background-color: $bg-gray;
+
+    & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & div:first-child {
+        margin: 0 auto;
+        width: 131px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-family: 'Golos', sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        & span::first-letter {
+            text-transform: uppercase;
+        }
+        @media (min-width: $tablet) {
+            line-height: 14px;
+        }
+        @media (min-width: $tablet) {
+            height: 60px;
+        }
+    }
+    & div:last-child {
+        height: 66px;
+        border-top: 1px solid #00000031;
+        font-family: 'RoadRadio', sans-serif;
+        font-size: 22px;
+        line-height: 120%;
+        @media (min-width: $tablet) {
+            font-size: 32px;
+            line-height: 100%;
+        }
+        @media (min-width: $desktop) {
+            height: 100px;
+            font-size: 46px;
+        }
+
+    }
+    &__current { 
+        color: $text-gray;
+    }
+
+}

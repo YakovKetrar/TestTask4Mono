@@ -1,0 +1,207 @@
+.contacts__wrapper {
+    display: flex;
+    margin-bottom: 50px;
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+    @media (min-width: $desktop) {
+        margin-bottom: 66px;
+    }
+
+}
+.contacts__info {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    font-family: 'Golos', sans-serif;
+    color: $text-black;
+    
+
+    @media (min-width: $tablet) {
+        width: 287px;
+        padding: 0;
+        margin-right: 73px;
+        margin-bottom: 0px;
+    }
+    @media (min-width: $desktop) {
+        width: 607px;
+        padding: 0;
+        margin-right: 53px;
+    }
+
+    &__tel {
+        margin-bottom: 6px;
+        font-family: 'RoadRadio', sans-serif;
+        font-size: 28px;
+        line-height: 120%;
+        @media (min-width: $desktop) {
+            font-size: 36px;
+            line-height: 110%;
+        }
+    }
+    &__mail {
+        margin-bottom: 20px;
+        font-size: 25px;
+        line-height: 30px;
+        color: $main-red;
+    }
+    &__firmName {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 140%;
+        @media (min-width: $desktop) {
+            font-size: 17px;
+            line-height: 110%;
+        }
+    }
+    &__firmData {
+        font-size: 13px;
+        line-height: 150%;
+        color: #808080;
+        &:not(:last-child) {
+        margin-bottom: 20px;
+        }
+
+    }
+}
+.contacts__form {
+    padding: 0 14px 0 16px;
+    @media (min-width: $tablet) {
+        padding: 0;
+        width: 350px;
+    }
+    @media (min-width: $desktop) {
+        padding: 0;
+        width: 630px;
+    }
+    & form > span {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-family: 'RoadRadio', sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        @media (min-width: $tablet) {
+            font-size: 28px;
+        }
+        @media (min-width: $desktop) {
+            font-size: 36px;
+            line-height: 110%;
+        }
+    }
+    &__input {
+        list-style-type: none;
+    }
+    &__input:nth-child(1) {
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+    &__input:nth-child(2) {
+        margin-bottom: 12px;
+    }
+    &__input:nth-child(1),
+    &__input:nth-child(2) {
+        display: inline-block;
+        width: 100%;
+        @media (min-width: $desktop) {
+            width: 300px;
+            margin-bottom: 28px;
+        }
+    }
+
+    &__input input,
+    &__input textarea {
+        box-sizing: border-box;
+        padding: 17px 20px;
+        width: 100%;    
+        height: 60px; 
+        border: none;
+        border-radius: 14px;
+        background-color: $bg-gray; 
+        
+        font-family: 'Golos', sans-serif;
+        font-size: 16px;
+        line-height: 150%;
+        &::placeholder {
+            color: $text-gray;
+        }
+    }
+    &__input  input {
+        @media (min-width: $desktop) {
+            width: 300px; 
+            height: 52x; 
+        }
+    }
+    &__input textarea {
+        height: 166px;
+        margin-bottom: 20px;
+        resize: none;
+    }
+
+
+    &__cheackbox {
+        position: relative;
+        margin-bottom: 21px;
+        display: block;
+        box-sizing: border-box;
+        width: 290px;
+        padding-left: 36px;
+
+        font-family: 'Golos', sans-serif;
+        font-size: 13px;
+        line-height: 120%;
+        @media (min-width: $tablet) {
+            margin-bottom: 30px;  
+            width: 349px;
+        }
+        @media (min-width: $desktop) { 
+            width: 630px;
+        }
+        & input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            clip: rect(0 0 0 0);
+            overflow: hidden;    
+            outline: none;
+            &:checked + .contacts__form__cheackbox_switch::before{
+                background-color: $main-red;
+            }
+        }
+        & span {
+            width: 290px;
+            color: $text-gray;
+            &::before {
+                position: absolute;
+                left: 0;
+                content: "";
+                width: 20px;
+                height: 20px;
+                border-radius: 4px;
+                background-color: $bg-gray;
+                transition: all 250ms;
+            }
+        }
+        & a {
+            text-decoration: none;
+            width: 290px;
+            color: $text-black;
+        }
+    }
+    &__button {
+        padding: 19px 36px;
+        box-sizing: border-box;
+        border-radius: 14px;
+        background-color: $main-red;
+        border: none;
+
+        font-family: 'RoadRadio', sans-serif;
+        font-size: 14px;
+        line-height: 14px;
+        color: white;
+    }
+
+}

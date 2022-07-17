@@ -1,0 +1,8 @@
+.map {
+ height: 600px;
+ width: 100vw;
+ @media (max-width: $desktop) {
+  height: 480px;
+  
+ }
+}
