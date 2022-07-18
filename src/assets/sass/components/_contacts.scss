@@ -122,6 +122,11 @@
         font-family: 'Golos', sans-serif;
         font-size: 16px;
         line-height: 150%;
+        &:hover,
+        &:focus-visible {
+            outline: 2px solid $main-red;
+            border-radius: 14px;
+        }
         &::placeholder {
             color: $text-gray;
         }
@@ -204,4 +209,12 @@
         color: white;
     }
 
+}
+.errors_list {
+    margin-left: 20px;
+
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 30px;
+    color: $main-red;
 }

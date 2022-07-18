@@ -1,8 +1,17 @@
 .map {
  height: 600px;
  width: 100vw;
+ margin-bottom: 30px;
  @media (max-width: $desktop) {
   height: 480px;
+  
+ }
+ @media (min-width: $tablet) {
+  margin-bottom: 59px;
+  
+ }
+ @media (max-width: $desktop) {
+  margin-bottom: 81px;
   
  }
 }

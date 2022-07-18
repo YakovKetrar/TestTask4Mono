@@ -31,36 +31,41 @@
             </span>
         </div>
         <div class="contacts__form">
-            <form>
+            <form @submit.prevent>
                 <span>Остались вопросы?</span>
                 <ul class="contacts__form__list">
                     <li class="contacts__form__input">
                         <lable class="contacts__form__lableName">
-                            <input type="text" name="tel" id="tel" placeholder="Ваше имя">
+                            <input type="text" name="name" id="name" placeholder="Ваше имя"  v-model="name">
                         </lable>
                     </li>
                     <li class="contacts__form__input">
                         <lable class="contacts__form__lableTel">
-                            <input type="text" name="tel" id="tel" placeholder="Ваше телефон">
+                            <input type="text" name="tel" id="tel" placeholder="Ваше телефон"  v-model="tel">
                         </lable>
                     </li>
                     <li class="contacts__form__input">
-                        <lable class="contacts__form__lableMsg">
-                            <textarea type="text" mame="msg" id="msg" placeholder="Ваше сообщение"></textarea>
+                        <lable class="contacts__form__lableMsg" >
+                            <textarea type="text" mame="msg" id="msg" placeholder="Ваше сообщение"  v-model="msg"></textarea>
                         </lable>
                     </li>
                     <li class="contacts__form__cheackbox">
-                        <label for="1">
-                            <input  type="checkbox" name="1" id="1" >
+                        <label for="1" @click="submitForm">
+                            <input  type="checkbox" name="1" id="1"  v-model="status">
                             <span class="contacts__form__cheackbox_switch">Я подтверждаю свое согласие
                             с политикой в отношении </span>
                             <a href="">обработки персональных данных</a>
                         </label>
                     </li>
                 </ul>
-                <button class="contacts__form__button">
-                    Задать вопрос
+                <button class="contacts__form__button" @click="submitForm">
+                    Задать вопросы?
                 </button>
+                 
+                    <ul class="errors_list" v-if="errors.length">
+                        <li class="errors_etem" v-for="error in errors" :key="error.id">{{ error }}</li>
+                    </ul>
+                  
             </form>
         </div>
    </div>
@@ -68,6 +73,46 @@
 </template>
 
 <script>
+export default {
+
+    data() {
+        return {
+            name: '',
+            tel: '',
+            msg: '',
+            status: '',
+            errors: [],
+        }
+    },
+    methods: {
+        submitForm() {
+            this.errors = []
+            this.dataForm = []
+            this.dataForm.push(!this.name, !this.tel, !this.msg)
+            console.log(this.dataForm)
+            if (this.dataForm.includes(true)) {
+                this.errors.push('заполните все поля');
+            }
+            if (!!this.tel && !this.validTel(this.tel)) {
+                this.errors.push('Некорректный номер');
+            }
+            console.log(!this.status)
+            if (!this.status) {
+                this.errors.push('Требуется подтвердить согласие');
+            }
+            
+        },
+        validTel(tel) {
+            var re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+            return re.test(tel);
+        },
+    },
+    mounted() {
+    }
+}
+
+
+
 </script>
 
 
