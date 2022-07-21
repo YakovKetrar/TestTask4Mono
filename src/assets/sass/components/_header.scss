@@ -67,7 +67,6 @@
             line-height: 140%;
             color: $text-black;
 
-
             @media (min-width: $tablet) {
                 display: inline-block;
                 margin-right: 30px;
@@ -76,6 +75,9 @@
                 margin-right: 46px;
                 font-size: 15px;
                 line-height: 18px;
+            }
+            & a {
+                text-decoration: none;
             }
         }
         & li:last-child {   
@@ -129,15 +131,16 @@
     @media (min-width: $desktop) {
         margin-right: 59px;
     }
-    & span {
+    &__tel {
         margin-bottom: 3px;
         font-family: 'Golos', sans-serif;
         font-weight: 500;
         font-size: 15px;
         line-height: 18px;
         color: $text-black;
+        text-decoration: none;
     }
-    & a {
+    &__mail {
         text-decoration: none;
         font-family: 'Graphik LC Web', sans-serif;
         font-size: 13px;
@@ -159,6 +162,12 @@
     @media (max-width: $desktop) {
         display: none;
     }
+    &:hover {
+        background-color: #CC2A3C;
+    }
+    &:active {
+        background-color: #991F2D;
+    }
 }
 }
 
@@ -172,23 +181,24 @@
 
     & > div {
         display: flex;
-        justify-content: center;
         align-items: center;
     }
-    & div:first-child {
+    &__breadcrumbs {
         margin: 0 auto;
         width: 131px;
         height: 48px;
         display: flex;
-        align-items: center;
         justify-content: space-between;
 
         font-family: 'Golos', sans-serif;
         font-size: 12px;
         line-height: 16px;
         text-align: center;
-        & span::first-letter {
+        & a::first-letter {
             text-transform: uppercase;
+        }
+        & a{
+            text-decoration: none;
         }
         @media (min-width: $tablet) {
             line-height: 14px;
@@ -197,19 +207,24 @@
             height: 60px;
         }
     }
-    & div:last-child {
+    &__title {
+        justify-content: center;
         height: 66px;
         border-top: 1px solid #00000031;
-        font-family: 'RoadRadio', sans-serif;
-        font-size: 22px;
-        line-height: 120%;
-        @media (min-width: $tablet) {
-            font-size: 32px;
-            line-height: 100%;
-        }
         @media (min-width: $desktop) {
             height: 100px;
-            font-size: 46px;
+        }
+        & h1 {
+            font-family: 'RoadRadio', sans-serif;
+            font-size: 22px;
+            line-height: 120%;
+            @media (min-width: $tablet) {
+                font-size: 32px;
+                line-height: 100%;
+            }
+            @media (min-width: $desktop) {
+                font-size: 46px;
+            }
         }
 
     }

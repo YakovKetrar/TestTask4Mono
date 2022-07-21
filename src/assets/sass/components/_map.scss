@@ -2,6 +2,7 @@
  height: 600px;
  width: 100vw;
  margin-bottom: 30px;
+ 
  @media (max-width: $desktop) {
   height: 480px;
   
@@ -14,4 +15,11 @@
   margin-bottom: 81px;
   
  }
+}
+.ymaps-2-1-79-ground-pane {
+ filter: grayscale(1);
+ -ms-filter: grayscale(1);
+ -webkit-filter: grayscale(1);
+ -moz-filter: grayscale(1);
+ -o-filter: grayscale(1);
 }

@@ -29,3 +29,15 @@
     font-weight: 400;
     font-style: normal;
     }
+    
+@font-face {
+    font-family: 'Akzidenz-Grotesk Pro';
+    src: url('./assets/fonts/AkzidenzGroteskPro/AkzidenzGroteskPro-Regular.eot');
+    src: local('Akzidenz-Grotesk Pro'),
+        url('./assets/fonts/AkzidenzGroteskPro/AkzidenzGroteskPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/AkzidenzGroteskPro/AkzidenzGroteskPro-Regular.woff2') format('woff2'),
+        url('./assets/fonts/AkzidenzGroteskPro/AkzidenzGroteskPro-Regular.woff') format('woff'),
+        url('./assets/fonts/AkzidenzGroteskPro/AkzidenzGroteskPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

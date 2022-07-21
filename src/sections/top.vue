@@ -8,17 +8,17 @@
                 </svg>
                 <ul>
                     <li>
-                        <a>
+                        <a href="">
                             упаковка
                         </a>
                     </li>
                     <li>
-                        <a>
+                        <a href="">
                             оборудование
                         </a>
                     </li>
                     <li>
-                        <a>
+                        <a href="">
                             сервис и запчасти
                         </a>
                     </li>
@@ -27,34 +27,34 @@
             <div class="rigth__wrapper">
                 <div>
                     <svg class="rigth__wrapper__svg__comparison">
-                        <use href="../assets/icons/icons.svg#comparison" ></use>
+                        <use href="../assets/icons/icons.svg#comparison" ><a></a></use>
                     </svg>
                     <svg class="rigth__wrapper__svg__search">
-                        <use href="../assets/icons/icons.svg#search" ></use>
+                        <use href="../assets/icons/icons.svg#search" ><a></a></use>
                     </svg>
                 </div>
                 <div class="rigth__wrapper__contacts">
-                    <span>+7 (499) 136-17-18</span>
-                    <a>info@monevac.ru</a>
+                    <a class="rigth__wrapper__contacts__tel" href="tel:+74991361718">+7 (499) 136-17-18</a>
+                    <a class="rigth__wrapper__contacts__mail" href="mailto:info@monevac.ru">info@monevac.ru</a>
                 </div>
                 <button class="rigth__wrapper__orderButton">
-                    <a>оставить заявку</a>
+                    оставить заявку
                 </button>
                 <div class="navigation__logo">
                     <img src="../assets/icons/logo.png" alt="logo">
                     <svg>
-                        <use href="../assets/icons/icons.svg#logo" ></use>
+                        <use href="../assets/icons/icons.svg#logo" ><a></a></use>
                     </svg>
                 </div>
             </div>
         </div>
 
         <div class="pageInfo">
-            <div>
-                <span>главная</span> &middot; <span class="pageInfo__current">контакты</span> 
+            <div class="pageInfo__breadcrumbs" >
+                <a href="">главная</a> &middot; <a href="" class="pageInfo__current">контакты</a>
             </div>
-            <div>
-                <span>контакты</span>
+            <div  class="pageInfo__title">
+                <h1>контакты</h1>
             </div>
         </div>
 

@@ -2,12 +2,12 @@
 <div class="container">
    <div class="contacts__wrapper">
         <div class="contacts__info">
-            <span class="contacts__info__tel">
+            <a class="contacts__info__tel" href="tel:89034679851">
                 8 (903) 467 98 51
-            </span>
-            <span class="contacts__info__mail">
+            </a>
+            <a class="contacts__info__mail" href="mailto:info@monevac.ru">
                 info@monevac.ru
-            </span>
+            </a>
             <span class="contacts__info__firmName">
                 Полное наименование:<br>Общество с ограниченной ответственностью «МОНЕВАК»  <br>                                      Сокращенное наименование: ООО «МОНЕВАК»
             </span>
@@ -34,38 +34,40 @@
             <form @submit.prevent>
                 <span>Остались вопросы?</span>
                 <ul class="contacts__form__list">
-                    <li class="contacts__form__input">
+                    <li class="contacts__form__etem">
                         <lable class="contacts__form__lableName">
-                            <input type="text" name="name" id="name" placeholder="Ваше имя"  v-model="name">
+                            <input type="text" name="name" id="name" placeholder=" " @keydown ="tappingCheсk" v-model="name" :class="{inputError: status.name}">
+                            <span class="contacts__form__placeholder">Ваше имя</span>
+                            <span class="contacts__form__error-msg" v-if="status.name">Является обязательным полем</span>
                         </lable>
                     </li>
-                    <li class="contacts__form__input">
+                    <li class="contacts__form__etem">
                         <lable class="contacts__form__lableTel">
-                            <input type="text" name="tel" id="tel" placeholder="Ваше телефон"  v-model="tel">
+                            <input type="text" name="tel" id="tel" placeholder=" " @keydown ="tappingCheсk" v-model="tel" :class="{inputError: status.tel}">
+                            <span class="contacts__form__placeholder">Ваш телефон</span>
+                            <span class="contacts__form__error-msg" v-if="status.tel">Является обязательным полем</span>
                         </lable>
                     </li>
-                    <li class="contacts__form__input">
+                    <li class="contacts__form__etem">
                         <lable class="contacts__form__lableMsg" >
-                            <textarea type="text" mame="msg" id="msg" placeholder="Ваше сообщение"  v-model="msg"></textarea>
+                            <textarea type="text" mame="msg" id="msg" placeholder=" "  v-model="msg" @keydown ="tappingCheсk" :class="{inputError: status.msg}"></textarea>
+                            <span class="contacts__form__placeholder">Вашe сообщение</span>
+                            <span class="contacts__form__error-msg" v-if="status.msg">Является обязательным полем</span>
                         </lable>
                     </li>
                     <li class="contacts__form__cheackbox">
-                        <label for="1" @click="submitForm">
-                            <input  type="checkbox" name="1" id="1"  v-model="status">
-                            <span class="contacts__form__cheackbox_switch">Я подтверждаю свое согласие
+                        <label for="1">
+                            <input  type="checkbox" name="1" id="1"   v-model="cb">
+                            <span class="contacts__form__cheackbox__switch">Я подтверждаю свое согласие
                             с политикой в отношении </span>
                             <a href="">обработки персональных данных</a>
                         </label>
+                        <span class="contacts__form__error-msg_cb contacts__form__error-msg" v-if="status.cb">Нужно подтвердить согласие</span>
                     </li>
                 </ul>
                 <button class="contacts__form__button" @click="submitForm">
                     Задать вопросы?
-                </button>
-                 
-                    <ul class="errors_list" v-if="errors.length">
-                        <li class="errors_etem" v-for="error in errors" :key="error.id">{{ error }}</li>
-                    </ul>
-                  
+                </button>      
             </form>
         </div>
    </div>
@@ -80,32 +82,30 @@ export default {
             name: '',
             tel: '',
             msg: '',
-            status: '',
-            errors: [],
+            cb: '',
+            status: {
+                name: false,
+                tel: false,
+                msg: false,
+                cb: false
+            },
         }
     },
     methods: {
         submitForm() {
-            this.errors = []
-            this.dataForm = []
-            this.dataForm.push(!this.name, !this.tel, !this.msg)
-            console.log(this.dataForm)
-            if (this.dataForm.includes(true)) {
-                this.errors.push('заполните все поля');
-            }
-            if (!!this.tel && !this.validTel(this.tel)) {
-                this.errors.push('Некорректный номер');
-            }
-            console.log(!this.status)
-            if (!this.status) {
-                this.errors.push('Требуется подтвердить согласие');
-            }
+            !this.name === true ? this.status.name = true : false ;
+            !this.tel === true ? this.status.tel = true : false ;
+            !this.msg === true ? this.status.msg = true : false ;
+            !this.cb === true ? this.status.cb = true : false ;
             
         },
-        validTel(tel) {
-            var re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
-            return re.test(tel);
-        },
+        tappingCheсk() {
+            this.status.name === true ? this.status.name = !this.name : false ;
+            this.status.tel === true ? this.status.tel = !this.tel : false ;
+            this.status.msg === true ? this.status.msg = !this.msg : false ;
+            this.status.cb === true ? this.status.cb = !this.status : false ;
+        }
+
     },
     mounted() {
     }

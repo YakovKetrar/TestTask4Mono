@@ -59,7 +59,7 @@
 }
 .footer__products {
     margin-bottom: 15px;
-    font-style: 'inter', sans-serif;
+    font-family: 'Golos', sans-serif;
     font-size: 20px;
     line-height: 170%;
     & a {
@@ -74,6 +74,7 @@
 
 }
 .footer__information {
+    font-family: 'Akzidenz-Grotesk Pro', sans-serif;
     font-size: 16px;
     line-height: 180%;
     &__item {
@@ -143,7 +144,7 @@
     &__email {
         margin-top: 15px;
         display: block;
-        font-family: 'Akzidenz-Grotesk Pro', sans-serif;
+        font-family: 'Golos', sans-serif;
         font-weight: 500;
         font-size: 19px;
         line-height: 110%;
@@ -156,7 +157,7 @@
         width: 280px;
         position: absolute;
         bottom: 0;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Akzidenz-Grotesk Pro', sans-serif;
         font-size: 16px;
         line-height: 130%;
     }
